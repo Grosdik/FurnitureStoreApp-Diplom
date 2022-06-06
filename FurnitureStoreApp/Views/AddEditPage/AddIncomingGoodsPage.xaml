@@ -1,0 +1,28 @@
+﻿<Page x:Class="FurnitureStoreApp.Views.AddEditPage.AddIncomingGoodsPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:FurnitureStoreApp.Views.AddEditPage"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="AddIncomingGoodsPage" Background="White">
+
+    <Grid>
+        <StackPanel>
+            <TextBlock Text="Дата"/>
+            <DatePicker Text="{Binding Date}" Name="dPickerDate" Width="180" Height="50" />
+            <TextBlock Text="Товар"/>
+            <ComboBox SelectedItem="{Binding Products}" Name="comboProducts" DisplayMemberPath="Name"/>
+            <TextBlock Text="Поставщик"/>
+            <ComboBox SelectedItem="{Binding Suppliers}" Name="comboSupplier" DisplayMemberPath="Company"/>
+            <TextBlock Text="Количество"/>
+            <TextBox Text="{Binding Amount}" Name="quantity" TextChanged="quantity_TextChanged" PreviewTextInput="quantity_PreviewTextInput" PreviewKeyDown="quantity_PreviewKeyDown"/>
+            <TextBlock Text="Цена закупки"/>
+            <TextBox Text="{Binding UnitPrice}" Name="purchasePrice" TextChanged="purchasePrice_TextChanged" PreviewTextInput="purchasePrice_PreviewTextInput" PreviewKeyDown="purchasePrice_PreviewKeyDown"/>
+            <TextBlock Text="Стоимость поставки"/>
+            <TextBox Text="{Binding PurchaseAmount}"  Name="deliveryСost" IsReadOnly="True"/>
+            <Button Content="Сохранить" Name="btnSave" Click="btnSave_Click"/>
+        </StackPanel>
+    </Grid>
+</Page>

@@ -1,0 +1,30 @@
+﻿<Window x:Class="FurnitureStoreApp.Views.WorkWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:FurnitureStoreApp.Views"
+        mc:Ignorable="d"
+        Title="OOO «Уютный дом»" Height="600" Width="950" Icon="/FurnitureStoreApp;component/Resources/divan4.ico">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="130"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="50"/>
+        </Grid.RowDefinitions>
+
+        <Grid Grid.Row="0" Grid.Column="0" Background="#efeae6"/>
+        <Grid Grid.Row="1" Grid.Column="0" Background="#efeae6"/>
+        <Grid Grid.Row="1" Grid.Column="1" Background="#efeae6"/>
+
+        <Frame x:Name="MainFrame" Grid.Column="1" NavigationUIVisibility="Hidden" ContentRendered="MainFrame_ContentRendered"/>
+
+        <StackPanel Orientation="Vertical" VerticalAlignment="Bottom" HorizontalAlignment="Center" >
+            <Button x:Name="btnBack" Content="Назад" Click="btnBack_Click"/>
+            <Button x:Name="btnExit" Content="Выход" Click="btnExit_Click"/>
+        </StackPanel>
+    </Grid>
+</Window>

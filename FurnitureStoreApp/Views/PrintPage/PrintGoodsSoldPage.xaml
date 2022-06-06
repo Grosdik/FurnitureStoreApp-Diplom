@@ -1,0 +1,32 @@
+﻿<Page x:Class="FurnitureStoreApp.Views.PrintPage.PrintGoodsSoldPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:FurnitureStoreApp.Views.PrintPage"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="PrintGoodsSoldPage">
+
+    <Grid>
+        <DocumentViewer x:Name="documentGoodsSold">
+            <FixedDocument>
+                <PageContent>
+                    <FixedPage>
+                        <Grid Margin="25" Width="760" Height="900">
+                            <DataGrid Grid.Row="1" Name="dGridGoodsSold" AutoGenerateColumns="False" IsReadOnly="True">
+                                <DataGrid.Columns>
+                                    <DataGridTextColumn Header="Дата" Binding="{Binding Date, StringFormat=dd/MM/yyyy}" Width="50*"/>
+                                    <DataGridTextColumn Header="Товар" Binding="{Binding Products.Name}" Width="100*"/>
+                                    <DataGridTextColumn Header="Количество проданого товара" Binding="{Binding Amount}" Width="100*"/>
+                                    <DataGridTextColumn Header="Цена продажи" Binding="{Binding SellinPrice}" Width="75*"/>
+                                    <DataGridTextColumn Header="Сумма продажи" Binding="{Binding SumOfSale}" Width="100*"/>
+                                </DataGrid.Columns>
+                            </DataGrid>
+                        </Grid>
+                    </FixedPage>
+                </PageContent>
+            </FixedDocument>
+        </DocumentViewer>
+    </Grid>
+</Page>
